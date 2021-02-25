@@ -3,8 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="helloWorld" class="com.tutorialspoint.ioc.HelloWorld">
+    <bean id="helloWorld1" class="com.tutorialspoint.ioc.BeanFactory.HelloWorld">
         <property name="message" value="hello World" />
     </bean>
+
+    <bean id="helloWorld" class="com.tutorialspoint.ioc.bean.HelloWorld" scope="prototype">
+        <property name="message" value="hello World" />
+    </bean>
+    <!--<bean id="helloWorld" class="com.tutorialspoint.ioc.bean.HelloWorld" scope="singleton">
+        <property name="message" value="hello World" />
+    </bean>-->
 
 </beans>

@@ -1,4 +1,4 @@
-package com.tutorialspoint.ioc;
+package com.tutorialspoint.ioc.bean;
 
 public class HelloWorld {
     private String message;

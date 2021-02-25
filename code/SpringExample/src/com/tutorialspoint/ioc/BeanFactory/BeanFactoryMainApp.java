@@ -1,6 +1,5 @@
 package com.tutorialspoint.ioc.BeanFactory;
 
-import com.tutorialspoint.ioc.HelloWorld;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
