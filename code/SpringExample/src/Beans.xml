@@ -4,23 +4,28 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 default-init-method="init" default-destroy-method="destroy">
 
-    <bean id="helloWorld1" class="com.tutorialspoint.ioc.BeanFactory.HelloWorld">
+    <!--<bean id="helloWorld1" class="com.tutorialspoint.ioc.BeanFactory.HelloWorld">
         <property name="message" value="hello World" />
-    </bean>
+    </bean>-->
 
-    <bean id="helloWorld" class="com.tutorialspoint.ioc.bean.HelloWorld" scope="prototype">
+    <!--<bean id="helloWorld" class="com.tutorialspoint.ioc.bean.HelloWorld" scope="prototype">
         <property name="message" value="hello World" />
-    </bean>
+    </bean>-->
     <!--<bean id="helloWorld" class="com.tutorialspoint.ioc.bean.HelloWorld" scope="singleton">
         <property name="message" value="hello World" />
     </bean>-->
 
-    <bean id="helloWorldlifecycle" class="com.tutorialspoint.ioc.bean.lifecycle.HelloWorldLifeCycle">
+    <!--<bean id="helloWorldlifecycle" class="com.tutorialspoint.ioc.bean.lifecycle.HelloWorldLifeCycle">
         <property name="message" value="hello World" />
-    </bean>
+    </bean>-->
 <!--
     <bean id="helloWorldlifecycle" class="com.tutorialspoint.ioc.bean.lifecycle.HelloWorldLifeCycle" init-method="init" destroy-method="destroy">
         <property name="message" value="hello World" />
     </bean>
 -->
+    <bean id="helloWorldpostprocessors" class="com.tutorialspoint.ioc.bean.postprocessors.HelloWorldPostPocessors" init-method="init" destroy-method="destroy">
+        <property name="message" value="hello World" />
+    </bean>
+
+    <bean class="com.tutorialspoint.ioc.bean.postprocessors.InitHelloWorld"></bean>
 </beans>
