@@ -29,7 +29,7 @@ default-init-method="init" default-destroy-method="destroy">
 
     <!--<bean class="com.tutorialspoint.ioc.bean.postprocessors.InitHelloWorld"></bean>-->
 
-    <bean id="helloWorld" class="com.tutorialspoint.ioc.bean.inherit.HelloWorld" >
+    <!--<bean id="helloWorld" class="com.tutorialspoint.ioc.bean.inherit.HelloWorld" >
        <property name="message1" value="hello World" />
        <property name="message2" value="hello second World" />
    </bean>
@@ -37,5 +37,21 @@ default-init-method="init" default-destroy-method="destroy">
     <bean id="helloWorldInherit" class="com.tutorialspoint.ioc.bean.inherit.HelloWorldInherit" parent="helloWorld" >
        <property name="message1" value="hello World" />
        <property name="message3" value="hello World" />
-   </bean>
+   </bean>-->
+
+    <bean id="textEditor" class="com.tutorialspoint.di.constructor.TextEditor" >
+        <constructor-arg ref="spellChecker" />
+    </bean>
+
+    <bean id="spellChecker" class="com.tutorialspoint.di.constructor.SpellChecker" >
+    </bean>
+    <bean id="bar" class="com.tutorialspoint.di.constructor.Bar" >
+    </bean>
+    <bean id="baz" class="com.tutorialspoint.di.constructor.Baz" >
+    </bean>
+
+    <bean id="foo" class="com.tutorialspoint.di.constructor.Foo" >
+        <constructor-arg ref="bar" />
+        <constructor-arg ref="baz" />
+    </bean>
 </beans>
