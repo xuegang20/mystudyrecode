@@ -39,7 +39,7 @@ default-init-method="init" default-destroy-method="destroy">
        <property name="message3" value="hello World" />
    </bean>-->
 
-    <bean id="textEditor" class="com.tutorialspoint.di.constructor.TextEditor" >
+    <!--<bean id="textEditor" class="com.tutorialspoint.di.constructor.TextEditor" >
         <constructor-arg ref="spellChecker" />
     </bean>
 
@@ -53,5 +53,10 @@ default-init-method="init" default-destroy-method="destroy">
     <bean id="foo" class="com.tutorialspoint.di.constructor.Foo" >
         <constructor-arg ref="bar" />
         <constructor-arg ref="baz" />
+    </bean>-->
+    <bean id="textEditor" class="com.tutorialspoint.di.function.TextEditor" >
+        <property name="spellChecker" ref="spellChecker"/>
+    </bean>
+    <bean id="spellChecker" class="com.tutorialspoint.di.function.SpellChecker" >
     </bean>
 </beans>
