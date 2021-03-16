@@ -54,9 +54,22 @@ default-init-method="init" default-destroy-method="destroy">
         <constructor-arg ref="bar" />
         <constructor-arg ref="baz" />
     </bean>-->
-    <bean id="textEditor" class="com.tutorialspoint.di.function.TextEditor" >
+    <!--<bean id="textEditor" class="com.tutorialspoint.di.function.TextEditor" >
         <property name="spellChecker" ref="spellChecker"/>
     </bean>
     <bean id="spellChecker" class="com.tutorialspoint.di.function.SpellChecker" >
+    </bean>-->
+    <!--<bean id="textEditor" class="com.tutorialspoint.autowire.nameortype.TextEditor" autowire="byType" >
+    &lt;!&ndash;<bean id="textEditor" class="com.tutorialspoint.autowire.nameortype.TextEditor" autowire="byName" >&ndash;&gt;
+        &lt;!&ndash;<property name="spellChecker" ref="spellChecker"/>&ndash;&gt;
+        <property name="name" value="sdfsdfsdfsafsdf fsdfadfsdfa"/>
+    </bean>
+    <bean id="spellChecker" class="com.tutorialspoint.autowire.nameortype.SpellChecker" >
+    </bean>-->
+    <!--<bean id="textEditor" class="com.tutorialspoint.autowire.constructor.TextEditor">-->
+    <bean id="textEditor" class="com.tutorialspoint.autowire.constructor.TextEditor" autowire="constructor">
+        <constructor-arg value="sdfkkkkklllllll" />
+    </bean>
+    <bean id="spellChecker" class="com.tutorialspoint.autowire.constructor.SpellChecker" >
     </bean>
 </beans>
