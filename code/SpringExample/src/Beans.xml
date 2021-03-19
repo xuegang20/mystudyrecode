@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 default-init-method="init" default-destroy-method="destroy">
 
@@ -72,4 +73,12 @@ default-init-method="init" default-destroy-method="destroy">
     </bean>
     <bean id="spellChecker" class="com.tutorialspoint.autowire.constructor.SpellChecker" >
     </bean>
+
+    <!-- required相关 -->
+    <context:annotation-config/>
+
+    <bean id="student" class="com.tutorialspoint.annotation.required.Student" >
+        <property name="age" value="18" />
+        <!--<property name="name" value="小红"/>-->
+     </bean>
 </beans>
