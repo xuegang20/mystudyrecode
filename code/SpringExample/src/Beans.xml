@@ -68,17 +68,28 @@ default-init-method="init" default-destroy-method="destroy">
     <bean id="spellChecker" class="com.tutorialspoint.autowire.nameortype.SpellChecker" >
     </bean>-->
     <!--<bean id="textEditor" class="com.tutorialspoint.autowire.constructor.TextEditor">-->
-    <bean id="textEditor" class="com.tutorialspoint.autowire.constructor.TextEditor" autowire="constructor">
+    <!--<bean id="textEditor" class="com.tutorialspoint.autowire.constructor.TextEditor" autowire="constructor">
         <constructor-arg value="sdfkkkkklllllll" />
     </bean>
     <bean id="spellChecker" class="com.tutorialspoint.autowire.constructor.SpellChecker" >
     </bean>
 
-    <!-- required相关 -->
+    &lt;!&ndash; required相关 &ndash;&gt;
     <context:annotation-config/>
 
     <bean id="student" class="com.tutorialspoint.annotation.required.Student" >
         <property name="age" value="18" />
-        <!--<property name="name" value="小红"/>-->
-     </bean>
+        &lt;!&ndash;<property name="name" value="小红"/>&ndash;&gt;
+     </bean>-->
+
+    <!--  事件event  -->
+    <bean id="helloWorld" class="com.tutorialspoint.annotation.event.HelloWorld">
+        <property name="message" value="Hello World!"/>
+    </bean>
+
+    <bean id="cStartEventHandler"
+          class="com.tutorialspoint.annotation.event.CStartEventHandler"/>
+
+    <bean id="cStopEventHandler"
+          class="com.tutorialspoint.annotation.event.CStopEventHandler"/>
 </beans>
