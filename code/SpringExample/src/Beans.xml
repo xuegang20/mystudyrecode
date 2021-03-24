@@ -92,4 +92,10 @@ default-init-method="init" default-destroy-method="destroy">
 
     <bean id="cStopEventHandler"
           class="com.tutorialspoint.annotation.event.CStopEventHandler"/>
+
+    <bean id="customEventListener"
+          class="com.tutorialspoint.annotation.event.zidingyi.CustomEventListener"/>
+
+    <bean id="customEventPublisher"
+          class="com.tutorialspoint.annotation.event.zidingyi.CustomEventPublisher"/>
 </beans>

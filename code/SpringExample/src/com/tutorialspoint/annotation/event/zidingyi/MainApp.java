@@ -1,5 +1,6 @@
-package com.tutorialspoint.annotation.event;
+package com.tutorialspoint.annotation.event.zidingyi;
 
+import com.tutorialspoint.annotation.event.HelloWorld;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,14 +8,10 @@ public class MainApp {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        // Let us raise a start event.
-        context.start();
+        CustomEventPublisher obj = (CustomEventPublisher) context.getBean("customEventPublisher");
 
-        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        obj.publish();
+        obj.publish();
 
-        obj.getMessage();
-
-        // Let us raise a stop event.
-        context.stop();
     }
 }
