@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
-    <aop:config>
+    <!--<aop:config>
         <aop:aspect id="log" ref="logging">
             <aop:pointcut id="selectAll" expression="execution(* com.tutorialspoint.aop.xml.*.*(..))"/>
             <aop:before method="afterAdvice" pointcut-ref="selectAll" />
@@ -15,10 +15,18 @@
             <aop:after-returning method="afterReturningAdvice" pointcut-ref="selectAll" returning="retVal"/>
             <aop:after-throwing method="AfterThrowingAdvice" pointcut-ref="selectAll" throwing="ex"/>
         </aop:aspect>
-    </aop:config>
+    </aop:config>-->
 
-    <bean id="logging" class="com.tutorialspoint.aop.xml.Logging"/>
+    <!--<bean id="logging" class="com.tutorialspoint.aop.xml.Logging"/>
     <bean id="student" class="com.tutorialspoint.aop.xml.Student">
+        <property name="name" value="laolar"/>
+        <property name="age" value="18"/>
+    </bean>-->
+
+    <aop:aspectj-autoproxy/>
+
+    <bean id="logging" class="com.tutorialspoint.aop.aspect.Logging"/>
+    <bean id="student" class="com.tutorialspoint.aop.aspect.Student">
         <property name="name" value="laolar"/>
         <property name="age" value="18"/>
     </bean>
